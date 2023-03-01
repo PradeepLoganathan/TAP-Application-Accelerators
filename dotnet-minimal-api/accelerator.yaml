@@ -9,9 +9,17 @@ accelerator:
   options:
     - name: applicationName
       label: Application Name
-      description: Application Name
+      description: The Application Name
+      dataType: string
       inputType: text
       defaultValue: my-minimal-api-app
       required: true
-  imports:
-    - name: tap-workload
+    - name: projectName
+      label: Project Name
+      description: The Project name
+      dataType: string
+      inputType: text
+      defaultValue: my-minimal-api-project
+      required: true
+
+
