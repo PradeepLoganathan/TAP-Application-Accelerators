@@ -6,3 +6,12 @@ accelerator:
     - simple
     - minimal-api
     - dotnet
+  options:
+    - name: applicationName
+      label: Application Name
+      description: Application Name
+      inputType: text
+      defaultValue: my-minimal-api-app
+      required: true
+  imports:
+    - name: tap-workload
