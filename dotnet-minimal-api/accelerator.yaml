@@ -1,7 +1,7 @@
 accelerator:
   displayName: Dotnet Minimal API
   description: This accelerator creates a minimal API using dotnet 6. Minimal API's are simpler, easier to reason with and a great way to get started with microservices.
-  iconUrl: https://github.com/PradeepLoganathan/TAP-Application-Accelerators/blob/main/dotnet-minimal-api/icon/minimal-api.png
+  iconUrl: https://raw.githubusercontent.com/PradeepLoganathan/TAP-Application-Accelerators/main/dotnet-minimal-api/icon/minimal-api.png
   tags:
     - simple
     - minimal-api
