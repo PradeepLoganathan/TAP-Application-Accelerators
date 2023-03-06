@@ -1,7 +1,7 @@
 accelerator:
   displayName: Sample Tensorflow Accelerator
   description: Sample app for building a deep learning model using Keras/Tensorflow
-  iconUrl: https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg
+  iconUrl: https://raw.githubusercontent.com/PradeepLoganathan/TAP-Application-Accelerators/main/python-convolutional-neural-network/icon/tensorflow.png
   tags:
   - "ML"
   - "AI"
