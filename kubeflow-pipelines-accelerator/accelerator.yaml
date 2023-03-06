@@ -1,7 +1,7 @@
 accelerator:
   displayName: Kubeflow Pipelines Accelerator
   description: This accelerator creates a project template for deploying Kubeflow Pipelines. This can be used to build complex kubeflow pipelines.
-  iconUrl: 
+  iconUrl: https://raw.githubusercontent.com/PradeepLoganathan/TAP-Application-Accelerators/main/kubeflow-pipelines-accelerator/icon/kubeflow-pipelines.png
   tags:
   - "ML"
   - "AI"
