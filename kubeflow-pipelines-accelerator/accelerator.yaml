@@ -1,0 +1,15 @@
+accelerator:
+  displayName: Kubeflow Pipelines Accelerator
+  description: This accelerator creates a project template for deploying Kubeflow Pipelines. This can be used to build complex kubeflow pipelines.
+  iconUrl: https://upload.wikimedia.org/wikipedia/commons/1/1b/ML_Ops_Venn_Diagram.svg
+  tags:
+  - "ML"
+  - "AI"
+  - "machinelearning"
+  - "datascience"
+  - "MLOps"
+  - "artificialintelligence"
+  - "python"
+  - "java"
+  - "R"
+  - "kubeflow"
