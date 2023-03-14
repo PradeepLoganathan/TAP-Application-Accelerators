@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: dotnet-mldotnet-trainer
+  annotations:
+    "backstage.io/kubernetes-label-selector": "app.kubernetes.io/part-of=dotnet-mldotnet-trainer"
+spec:
+  type: service
+  lifecycle: experimental
+  owner: default-team

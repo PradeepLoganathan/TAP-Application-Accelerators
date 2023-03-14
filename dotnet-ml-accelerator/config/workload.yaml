@@ -1,0 +1,15 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  labels:
+    app.kubernetes.io/part-of: tanzu-mldotnet-trainer
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: worker
+  name: tanzu-mldotnet-trainer
+  namespace: application-ns
+spec:
+  source:
+    git:
+      ref:
+        branch: main
+      url: https://github.com/PradeepLoganathan/SentimentAnalysisTrainer

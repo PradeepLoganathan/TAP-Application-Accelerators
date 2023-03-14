@@ -1,7 +1,7 @@
 accelerator:
   displayName: Dotnet Machine Learning Accelerator
   description: Accelerator to get started on building an ML.net based machine learning system. This accelerator provides the necessary starting blocks to build a ML model using dotnet.
-  iconUrl: https://raw.githubusercontent.com/PradeepLoganathan/TAP-Application-Accelerators/main/python-convolutional-neural-network/icon/tensorflow.png
+  iconUrl: https://raw.githubusercontent.com/PradeepLoganathan/TAP-Application-Accelerators/main/dotnet-ml-accelerator/icon/dotnet-ml.png
   tags:
   - "ML"
   - "AI"
