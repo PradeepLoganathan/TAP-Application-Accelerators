@@ -1,12 +1,20 @@
 accelerator:
-  displayName: Dotnet Machine Learning Accelerator
-  description: Accelerator to get started on building an ML.net based machine learning system. This accelerator provides the necessary starting blocks to build a ML model using dotnet.
+  displayName: Continuous Trainer & Model builder
+  description: "This accelerator provides a template to build a continous trainer and model builder. The training is run continuously when model code or model data is updated. The trained model is uploaded to source control and can be immediately used"
   iconUrl: https://raw.githubusercontent.com/PradeepLoganathan/TAP-Application-Accelerators/main/dotnet-ml-accelerator/icon/dotnet-ml.png
   tags:
-  - "ML"
-  - "AI"
-  - "machinelearning"
-  - "datascience"
-  - "MLOps"
-  - "artificialintelligence"
-  - "dotnet"
+    - "ML"
+    - "AI"
+    - "machinelearning"
+    - "datascience"
+    - "MLOps"
+    - "artificialintelligence"
+    - "dotnet"
+  options:
+  - name: modelURL
+    label: Model Repository
+    description: The git repository where the model will be stored and version controlled.
+    dataType: string
+    inputType: text
+    defaultValue: "https://github.com/companyx/projecty/modelrepo"
+    required: true
