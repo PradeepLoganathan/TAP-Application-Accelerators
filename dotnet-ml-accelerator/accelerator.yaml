@@ -28,10 +28,8 @@ accelerator:
       defaultValue: "PricingModel.Zip"
       required: true
 engine:
-  type: Merge
-  sources:
-  - type: Chain
-    transformations:
+  type: Chain
+  transformations:
     - type: Include
       patterns: ['**']
     - type: ReplaceText
