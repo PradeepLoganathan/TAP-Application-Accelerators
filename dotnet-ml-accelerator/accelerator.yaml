@@ -27,7 +27,7 @@ accelerator:
       inputType: text
       defaultValue: "PricingModel.Zip"
       required: true
-  engine:
+engine:
   type: Merge
   sources:
   - type: Chain
