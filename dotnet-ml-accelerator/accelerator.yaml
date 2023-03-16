@@ -10,6 +10,8 @@ accelerator:
     - "MLOps"
     - "artificialintelligence"
     - "dotnet"
+    - "continuoustraining"
+    - "modelbuilder"
   options:
   - name: modelURL
     label: Model Repository
