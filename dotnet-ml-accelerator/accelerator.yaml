@@ -27,14 +27,14 @@ accelerator:
       inputType: text
       defaultValue: "PricingModel.Zip"
       required: true
-  engine:
-    type: Chain
-    transformations:
-    - type: Include
-      patterns: ['**/*.cs']
-    - type: ReplaceText
-      substitutions:
-      - text: YOUR_MODEL_REPO_URL
-        with: "#modelURL"
-      - text: YOUR_MODEL_FILE_NAME
-        with: "#modelName"
+engine:
+  type: Chain
+  transformations:
+  - type: Include
+    patterns: ['**/*.cs']
+  - type: ReplaceText
+    substitutions:
+    - text: YOUR_MODEL_REPO_URL
+      with: "#modelURL"
+    - text: YOUR_MODEL_FILE_NAME
+      with: "#modelName"
