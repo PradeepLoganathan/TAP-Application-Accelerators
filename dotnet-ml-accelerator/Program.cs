@@ -5,6 +5,7 @@ using SentimentAnalysisConsoleApp.DataStructures;
 using Common;
 using static Microsoft.ML.DataOperationsCatalog;
 using Microsoft.ML.Trainers;
+using System.Net.Http;
 
 namespace SentimentAnalysisConsoleApp
 {
@@ -20,14 +21,24 @@ namespace SentimentAnalysisConsoleApp
 
         private static readonly string ModelPath = GetAbsolutePath(ModelRelativePath);
 
-        static void Main(string[] args)
+        private static string wikiDetoxPath = "YOUR_MODEL_FILE_NAME";
+
+        static async void Main(string[] args)
         {
             // Create MLContext 
             // Set a random seed for repeatable/deterministic results across multiple trainings.
             var mlContext = new MLContext(seed: 1);
 
+            if (!File.Exists(wikiDetoxPath))
+            {
+                var contents = await new HttpClient()
+                    .GetStringAsync("YOUR_MODEL_REPO_URL");
+
+                File.WriteAllText(wikiDetoxPath, contents);
+            }
+
             // Load data
-            IDataView dataView = mlContext.Data.LoadFromTextFile<SentimentIssue>(DataPath, hasHeader: true);
+            IDataView dataView = mlContext.Data.LoadFromTextFile<SentimentIssue>(wikiDetoxPath, hasHeader: true);
 
             TrainTestData trainTestSplit = mlContext.Data.TrainTestSplit(dataView, testFraction: 0.2);
             IDataView trainingData = trainTestSplit.TrainSet;
@@ -38,9 +49,6 @@ namespace SentimentAnalysisConsoleApp
 
             // Select algorithm and configure model builder                            
             var trainer = mlContext.BinaryClassification.Trainers.SdcaLogisticRegression(labelColumnName: "Label", featureColumnName: "Features");
-            //var trainer = mlContext.BinaryClassification.Trainers.SgdCalibrated(labelColumnName: "Label", featureColumnName: "Features");
-            //var trainer = mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(labelColumnName: "Label", featureColumnName: "Features");
-            //var trainer = mlContext.BinaryClassification.Trainers.AveragedPerceptron(labelColumnName: "Label", featureColumnName: "Features");
             var trainingPipeline = dataProcessPipeline.Append(trainer);
 
             // Train the model
@@ -55,7 +63,7 @@ namespace SentimentAnalysisConsoleApp
             TestPrediction(mlContext, trainedModel);
         }
 
-        private static void EvaluateModel(MLContext mlContext, IDataView testData, Microsoft.ML.Trainers trainer, ITransformer trainedModel)
+        private static void EvaluateModel(MLContext mlContext, IDataView testData, SdcaLogisticRegressionBinaryTrainer trainer, ITransformer trainedModel)
         {
             // Evaluate the model
             var predictions = trainedModel.Transform(testData);
@@ -68,7 +76,7 @@ namespace SentimentAnalysisConsoleApp
         private static void TestPrediction(MLContext mlContext, ITransformer trainedModel)
         {
             // TRY IT: Make a single test prediction, loading the model from .ZIP file
-            SentimentIssue sampleStatement = new SentimentIssue { Text = "machine learning is amazing!" };
+            SentimentIssue sampleStatement = new SentimentIssue { Text = "He is an amazing person!" };
 
             // Create prediction engine related to the loaded trained model
             var predEngine = mlContext.Model.CreatePredictionEngine<SentimentIssue, SentimentPrediction>(trainedModel);
@@ -87,7 +95,7 @@ namespace SentimentAnalysisConsoleApp
             FileInfo _dataRoot = new FileInfo(typeof(Program).Assembly.Location);
             string assemblyFolderPath = _dataRoot.Directory.FullName;
 
-            string fullPath = Path.Combine(assemblyFolderPath , relativePath);
+            string fullPath = Path.Combine(assemblyFolderPath, relativePath);
 
             return fullPath;
         }

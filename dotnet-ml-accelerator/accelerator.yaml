@@ -13,10 +13,28 @@ accelerator:
     - "continuoustraining"
     - "modelbuilder"
   options:
-  - name: modelURL
-    label: Model Repository
-    description: The git repository where the model will be stored and version controlled.
-    dataType: string
-    inputType: text
-    defaultValue: "https://github.com/companyx/projecty/modelrepo"
-    required: true
+    - name: modelURL
+      label: Model Repository
+      description: The git repository where the model will be stored and version controlled.
+      dataType: string
+      inputType: text
+      defaultValue: "https://github.com/companyx/projecty/modelrepo"
+      required: true
+    - name: modelName
+      label: Model File Name
+      description: The name of the model to be stored in the git repo.
+      dataType: string
+      inputType: text
+      defaultValue: "PricingModel.Zip"
+      required: true
+  engine:
+    type: Chain
+    transformations:
+    - type: Include
+      patterns: ['**/*.cs']
+    - type: ReplaceText
+      substitutions:
+      - text: YOUR_MODEL_REPO_URL
+        with: "#modelURL"
+      - text: YOUR_MODEL_FILE_NAME
+        with: "#modelName"
