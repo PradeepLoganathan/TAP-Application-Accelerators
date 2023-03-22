@@ -1,7 +1,7 @@
 accelerator:
   displayName: Continuous Trainer & Model builder
   description: "This accelerator provides a template to build a continuous trainer and model builder. The training is run continuously when model code or model data is updated. The trained model is uploaded to source control and can be immediately used"
-  iconUrl: https://raw.githubusercontent.com/PradeepLoganathan/TAP-Application-Accelerators/main/dotnet-ml-accelerator/icon/dotnet-ml.png
+  iconUrl: https://raw.githubusercontent.com/PradeepLoganathan/TAP-Application-Accelerators/main/dotnet-ml-accelerator/icon/continous-trainer.png
   tags:
     - "ML"
     - "AI"
