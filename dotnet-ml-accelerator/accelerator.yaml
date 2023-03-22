@@ -1,6 +1,6 @@
 accelerator:
   displayName: Continuous Trainer & Model builder
-  description: "This accelerator provides a template to build a continous trainer and model builder. The training is run continuously when model code or model data is updated. The trained model is uploaded to source control and can be immediately used"
+  description: "This accelerator provides a template to build a continuous trainer and model builder. The training is run continuously when model code or model data is updated. The trained model is uploaded to source control and can be immediately used"
   iconUrl: https://raw.githubusercontent.com/PradeepLoganathan/TAP-Application-Accelerators/main/dotnet-ml-accelerator/icon/dotnet-ml.png
   tags:
     - "ML"
@@ -13,16 +13,23 @@ accelerator:
     - "continuoustraining"
     - "modelbuilder"
   options:
+    - name: dataURL
+      label: 'Training Data Repository'
+      description: The versioned workspace where the training data will be stored and version controlled.
+      dataType: string
+      inputType: text
+      defaultValue: "https://github.com/companyx/projecty/trainingdata"
+      required: true
     - name: modelURL
-      label: 'Model Repository'
-      description: The git repository where the model will be stored and version controlled.
+      label: 'Model Registry'
+      description: The model registry where the trained model will be stored and version controlled.
       dataType: string
       inputType: text
       defaultValue: "https://github.com/companyx/projecty/modelrepo"
       required: true
     - name: modelName
-      label: 'Model File Name'
-      description: The name of the model to be stored in the git repo.
+      label: 'Model Name'
+      description: The name of the model to be generated from training.
       dataType: string
       inputType: text
       defaultValue: "PricingModel.Zip"
