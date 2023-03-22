@@ -1,23 +1,24 @@
 accelerator:
-  displayName: Dotnet Minimal API
-  description: This accelerator creates a minimal API using dotnet 6. Minimal API's are simpler, easier to reason with and a great way to get started with microservices.
+  displayName: Model Serving API
+  description: This accelerator creates an API wrapper to serve a model. This accelerator generates the API wrapping code.
   iconUrl: https://raw.githubusercontent.com/PradeepLoganathan/TAP-Application-Accelerators/main/dotnet-minimal-api/icon/continous-api.png
   tags:
-    - simple
-    - minimal-api
+    - ml
+    - modelserving
+    - api
     - dotnet
   options:
-  - name: applicationName
-    label: Application Name
-    description: The Application Name
-    dataType: string
-    inputType: text
-    defaultValue: my-minimal-api-app
-    required: true
-  - name: projectName
-    label: Project Name
-    description: The Project name
-    dataType: string
-    inputType: text
-    defaultValue: my-minimal-api-project
-    required: true
+    - name: apiName
+      label: API Name
+      description: The API Name
+      dataType: string
+      inputType: text
+      defaultValue: pricingpredictor-api
+      required: true
+    - name: modelPath
+      label: Model Path
+      description: The location of the model.
+      dataType: string
+      inputType: text
+      defaultValue: prizingpredictionmodel.zip
+      required: true
