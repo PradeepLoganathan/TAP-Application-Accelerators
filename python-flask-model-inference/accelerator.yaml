@@ -21,7 +21,7 @@ accelerator:
   type: Chain
   transformations:
     - type: Include
-      patterns: ['**']
+      patterns: ['app/**']
     - type: ReplaceText
       substitutions:
       - text: PICKLE_FILE
