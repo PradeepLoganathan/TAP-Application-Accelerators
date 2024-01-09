@@ -1,0 +1,19 @@
+accelerator:
+  displayName: Flask model inference
+  description: "This accelerator provides a template to build a flask based model inference that is exposed as an API endpoint"
+  iconUrl: https://raw.githubusercontent.com/PradeepLoganathan/TAP-Application-Accelerators/main/python-flask-model-inference/icon/flask-inference.png
+  tags:
+    - "ML"
+    - "AI"
+    - "flask"
+    - "datascience"
+    - "MLOps"
+    - "inference"
+  options:
+    - name: pickleFile
+      label: 'Model file path'
+      description: The path to the model.
+      dataType: string
+      inputType: text
+      defaultValue: "//volume/claim/model.sav"
+      required: true
