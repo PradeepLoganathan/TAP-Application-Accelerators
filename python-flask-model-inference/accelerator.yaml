@@ -17,3 +17,12 @@ accelerator:
       inputType: text
       defaultValue: "//volume/claim/model.sav"
       required: true
+  engine:
+  type: Chain
+  transformations:
+    - type: Include
+      patterns: ['**']
+    - type: ReplaceText
+      substitutions:
+      - text: PICKLE_FILE
+        with: "#pickleFile"

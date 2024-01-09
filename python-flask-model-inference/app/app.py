@@ -4,7 +4,7 @@ import pickle
 app = Flask(__name__)
 
 # Load the trained model (make sure the path to 'finalized_model.sav' is correct)
-with open('finalized_model.sav', 'rb') as model_file:
+with open('PICKLE_FILE', 'rb') as model_file:
     model = pickle.load(model_file)
 
 @app.route('/predict', methods=['POST'])
